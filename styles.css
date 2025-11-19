@@ -286,6 +286,7 @@ body {
 .unit-badge.mmj { background: #fbd55b; }
 .unit-badge.vbs { background: #ff5b7a; }
 .unit-badge.wxs { background: #8e6cff; }
+/* (nightcord + VS colors left as-is) */
 .unit-badge["25n"] { background: #595f88; }
 .unit-badge.vs { background: #00c7ff; }
 
@@ -406,57 +407,57 @@ body {
   background: var(--accent);
 }
 
-/* diagonal accent at bottom */
+/* ======== NEW BOTTOM AREA (MATCHS HARUKA CARD) ======== */
+
+/* Big diagonal colored plate */
 .card-accent-diagonal {
   position: absolute;
   inset: auto 0 0 0;
-  height: 120px;
-  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
-  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    var(--accent-soft),
+    var(--accent-soft)
+  );
+  /* Diagonal edge like the in-game card */
+  clip-path: polygon(0 62%, 100% 30%, 100% 100%, 0 100%);
 }
 
-/* character art – you supply the PNGs */
-.card-art {
+/* Container for elements that sit on that plate */
+.card-info {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 50%;
-  width: 210px;
-  transform: translateX(-50%);
+  height: 150px;
   pointer-events: none;
 }
 
-/* Info block at very bottom */
-.card-info {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Stage badge and bar */
+/* Stage pill + bar near the top-left of plate */
 .stage-row {
+  position: absolute;
+  top: 16px;
+  left: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .stage-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: var(--accent);
+  color: #ffffff;
   font-size: 11px;
   font-weight: 700;
-  color: #053040;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 .stage-label {
-  opacity: 0.86;
+  opacity: 0.9;
 }
 
 .stage-number {
@@ -464,26 +465,31 @@ body {
 }
 
 .stage-progress {
-  width: 90px;
-  height: 5px;
+  width: 80px;
+  height: 6px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.4);
   overflow: hidden;
 }
 
 .stage-bar {
   width: calc(100% * var(--stage-progress));
   height: 100%;
-  background: linear-gradient(90deg, #00f0ff, #b5f6ff);
+  background: var(--accent);
 }
 
-/* name tag */
+/* Floating black name box centered on plate */
 .name-tag {
-  margin-top: 4px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: rgba(9, 8, 20, 0.92);
-  backdrop-filter: blur(3px);
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  padding: 8px 18px 7px;
+  border-radius: 9px;
+  background: #101019;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
 }
 
 .name-ja {
@@ -493,8 +499,18 @@ body {
 
 .name-en {
   font-size: 11px;
-  opacity: 0.78;
-  letter-spacing: 0.07em;
+  opacity: 0.7;
+  letter-spacing: 0.06em;
+}
+
+/* ===== character art ===== */
+.card-art {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 210px;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 /* tap / selection animation */
