@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project SEKAI – Character Select</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background blur + pattern -->
+  <div class="bg-layer"></div>
+
+  <main class="selector-layout">
+    <!-- Left side unit list (static for now) -->
+    <aside class="unit-list">
+      <div class="unit-button active">VIRTUAL SINGER</div>
+      <div class="unit-button">Leo/need</div>
+      <div class="unit-button">MORE MORE JUMP!</div>
+      <div class="unit-button">Vivid BAD SQUAD</div>
+      <div class="unit-button">ワンダショ</div>
+      <div class="unit-button">25時、ナイトコードで。</div>
+    </aside>
+
+    <!-- Main character card row -->
+    <section class="card-row" id="cardRow">
+      <!-- Example characters – duplicate / edit as needed -->
+      <article class="character-card" data-name="Yoisaki Kanade">
+        <div class="card-bg bg-nightcord"></div>
+        <div class="card-accent accent-pink"></div>
+
+        <!-- Replace src with your clean Kanade render -->
+        <img src="images/kanade.png" alt="Yoisaki Kanade" class="character-art">
+
+        <div class="card-info">
+          <div class="stage-badge">
+            <span class="stage-label">STAGE</span>
+            <span class="stage-number">17</span>
+          </div>
+          <div class="stage-progress">
+            <div class="stage-bar"></div>
+          </div>
+          <div class="name-tag">
+            <span class="name-ja">宵崎 奏</span>
+            <span class="name-en">YOISAKI KANADE</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="character-card" data-name="Asahina Mafuyu">
+        <div class="card-bg bg-nightcord"></div>
+        <div class="card-accent accent-blue"></div>
+        <img src="images/mafuyu.png" alt="Asahina Mafuyu" class="character-art">
+        <div class="card-info">
+          <div class="stage-badge">
+            <span class="stage-label">STAGE</span>
+            <span class="stage-number">13</span>
+          </div>
+          <div class="stage-progress">
+            <div class="stage-bar"></div>
+          </div>
+          <div class="name-tag">
+            <span class="name-ja">朝比奈 まふゆ</span>
+            <span class="name-en">ASAHINA MAFUYU</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="character-card" data-name="Shinonome Ena">
+        <div class="card-bg bg-nightcord"></div>
+        <div class="card-accent accent-beige"></div>
+        <img src="images/ena.png" alt="Shinonome Ena" class="character-art">
+        <div class="card-info">
+          <div class="stage-badge">
+            <span class="stage-label">STAGE</span>
+            <span class="stage-number">10</span>
+          </div>
+          <div class="stage-progress">
+            <div class="stage-bar"></div>
+          </div>
+          <div class="name-tag">
+            <span class="name-ja">東雲 絵名</span>
+            <span class="name-en">SHINONOME ENA</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="character-card" data-name="Akiyama Mizuki">
+        <div class="card-bg bg-nightcord"></div>
+        <div class="card-accent accent-purple"></div>
+        <img src="images/mizuki.png" alt="Akiyama Mizuki" class="character-art">
+        <div class="card-info">
+          <div class="stage-badge">
+            <span class="stage-label">STAGE</span>
+            <span class="stage-number">9</span>
+          </div>
+          <div class="stage-progress">
+            <div class="stage-bar"></div>
+          </div>
+          <div class="name-tag">
+            <span class="name-ja">暁山 瑞希</span>
+            <span class="name-en">AKIYAMA MIZUKI</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Bottom instruction (like in-game) -->
+  <div class="bottom-label">
+    キャラクターを選択してください
+  </div>
+
+  <!-- Selection overlay: appears when you click a card -->
+  <div id="selectionOverlay" class="selection-overlay">
+    <div class="selection-box">
+      <p id="selectionText"></p>
+      <p class="selection-sub">Tap anywhere to close</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
